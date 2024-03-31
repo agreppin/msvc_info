@@ -1,0 +1,22 @@
+name: info
+on: [push]
+jobs:
+  windows-latest-msvc:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [x64]
+        toolset: [14.39, 14.40]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+          toolset: ${{ matrix.toolset }}
+      - name: info ${{ matrix.arch }} ${{ matrix.toolset }}
+        shell: cmd
+        run: |
+          @set VCToolsVersion
+          @cl
