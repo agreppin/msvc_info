@@ -1,5 +1,9 @@
 name: info
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - '*.md'
+
 jobs:
   msvc:
     runs-on: windows-latest
@@ -19,4 +23,5 @@ jobs:
         shell: cmd
         run: |
           @set VCToolsVersion
-          @cl
+          cl typeof.c /std:clatest
+          typeof.exe

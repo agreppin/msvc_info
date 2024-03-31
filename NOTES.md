@@ -1,0 +1,2 @@
+- https://learn.microsoft.com/en-us/cpp/c-language/typeof-c?view=msvc-170
+- https://devblogs.microsoft.com/cppblog/msvc-toolset-minor-version-number-14-40-in-vs-2022-v17-10/
