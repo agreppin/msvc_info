@@ -1,12 +1,12 @@
 name: info
 on: [push]
 jobs:
-  windows-latest-msvc:
+  msvc:
     runs-on: windows-latest
     strategy:
       matrix:
         arch: [x64]
-        toolset: [14.39, 14.40]
+        toolset: ['14.39', '14.40']
       fail-fast: false
 
     steps:
